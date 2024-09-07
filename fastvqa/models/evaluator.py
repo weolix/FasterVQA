@@ -3,6 +3,8 @@ import torch.nn as nn
 import time
 from torch.nn.functional import adaptive_avg_pool3d
 from functools import partial, reduce
+from ..datasets.fusion_datasets import FusionDataset
+from .swin_unet import SwinUnet3D
 from .swin_backbone import SwinTransformer3D as VideoBackbone
 from .swin_backbone import swin_3d_tiny, swin_3d_small
 from .conv_backbone import convnext_3d_tiny, convnext_3d_small
@@ -83,6 +85,8 @@ class DiViDeAddEvaluator(nn.Module):
                 b = convnext_3d_small(pretrained=True)
             elif t_backbone_size == 'xclip':
                 b = build_x_clip_model(**backbone[key])
+            elif t_backbone_size == 'swin_unet':
+                b = SwinUnet3D(**backbone[key])
             else:
                 raise NotImplementedError
             print("Setting backbone:", key+"_backbone")
@@ -208,7 +212,7 @@ if __name__ == "__main__":
     
     dataset = FusionDataset(fusion_opt)
     
-    model = DiViDeEvaluator({"resize":dict(window_size=(4,4,4)), 
+    model = DiViDeAddEvaluator({"resize":dict(window_size=(4,4,4)), 
                              "fragments":dict(window_size=(4,4,4))}).to(device)
     data = dataset[0]
     video = {}
