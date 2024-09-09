@@ -16,7 +16,7 @@ data:
         args:
             phase: train
             anno_file: ./examplar_data_labels/train_labels.txt
-            data_prefix: /home/ippl/datasets/LSVQ/videos
+            data_prefix: /home/user/XUX/datasets/LSVQ/videos/
             sample_types:
                 fragments:
                     fragments_h: 7
@@ -33,7 +33,7 @@ data:
         args:
             phase: test
             anno_file: ./examplar_data_labels/LIVE_VQC/labels.txt
-            data_prefix: /home/ippl/SJB/LIVE-VQC/data/Video
+            data_prefix: /home/user/XUX/datasets/LIVE_VQC
             sample_types:
                 #resize:
                 #    size_h: 224
@@ -53,7 +53,7 @@ data:
         args:
             phase: test
             anno_file: ./examplar_data_labels/LSVQ/labels_1080p.txt
-            data_prefix: /home/ippl/datasets/LSVQ/videos
+            data_prefix: /home/user/XUX/datasets/LSVQ/videos/
             sample_types:
                 #resize:
                 #    size_h: 224
@@ -73,7 +73,7 @@ data:
         args:
             phase: test
             anno_file: ./examplar_data_labels/KoNViD/labels.txt
-            data_prefix: /home/ippl/SJB/KoNViD_1k/KoNViD_1k_videos
+            data_prefix: /home/user/XUX/datasets/
             sample_types:
                 #resize:
                 #    size_h: 224
@@ -94,7 +94,7 @@ data:
         args:
             phase: test
             anno_file: ./examplar_data_labels/LSVQ/labels_test.txt
-            data_prefix: /home/ippl/datasets/LSVQ/videos
+            data_prefix: /home/user/XUX/datasets/LSVQ/videos/
             sample_types:
                 #resize:
                 #    size_h: 224

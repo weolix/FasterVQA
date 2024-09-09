@@ -12,7 +12,7 @@ from scipy.stats.stats import kendalltau as kendallr
 import numpy as np
 
 from time import time
-from tqdm import tqdm
+from rich.progress import track
 import pickle
 import math
 
@@ -59,7 +59,7 @@ def plcc_loss(y_pred, y):
     loss1 = torch.nn.functional.mse_loss(rho * y_pred, y) / 4
     return ((loss0 + loss1) / 2).float()
 
-def rescaled_l2_loss(y_pred, y):
+def rescaled_l2_loss(y_pred, y, eps=1e-8):
     y_pred_rs = (y_pred - y_pred.mean()) / y_pred.std()
     y_rs = (y - y.mean()) / (y.std() + eps)
     return torch.nn.functional.mse_loss(y_pred_rs, y_rs)
@@ -97,7 +97,7 @@ sample_types=["resize", "fragments", "crop", "arp_resize", "arp_fragments"]
 def finetune_epoch(ft_loader, model, model_ema, optimizer, scheduler, device, epoch=-1, 
                    need_upsampled=True, need_feat=True, need_fused=False, need_separate_sup=False):
     model.train()
-    for i, data in enumerate(tqdm(ft_loader, desc=f"Training in epoch {epoch}")):
+    for i, data in enumerate(track(ft_loader, description=f"Training in epoch {epoch}")):
         optimizer.zero_grad()
         video = {}
         for key in sample_types:
@@ -241,7 +241,7 @@ def inference_set(inf_loader, model, device, best_, save_model=False, suffix='s'
 
     best_s, best_p, best_k, best_r = best_
  
-    for i, data in enumerate(tqdm(inf_loader, desc="Validating")):
+    for i, data in enumerate(track(inf_loader, description="Validating")):
         result = dict()
         video, video_up = {}, {}
         for key in sample_types:

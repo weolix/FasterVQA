@@ -86,7 +86,7 @@ class DiViDeAddEvaluator(nn.Module):
             elif t_backbone_size == 'xclip':
                 b = build_x_clip_model(**backbone[key])
             elif t_backbone_size == 'swin_unet':
-                b = SwinUnet3D(**backbone[key])
+                b = SwinUnet3D()
             else:
                 raise NotImplementedError
             print("Setting backbone:", key+"_backbone")

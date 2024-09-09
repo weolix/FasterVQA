@@ -2,3 +2,6 @@
 .pth
 *.ipynb_checkpoints/*
 .ipynb_checkpoints/*
+pretrained_weights/*
+wandb
+*.pyc

@@ -6455,7 +6455,7 @@ ia-batch19/gnatvt-Danger_Men_Cooking_-_Smokey_House_Center.mp4, -1, -1, 65.21621
 ia-batch19/Coral_Gables_Now_June_2011.mp4, -1, -1, 49.6666666666667
 ia-batch19/City_Council_Informal_-_09_15_2015.mp4, -1, -1, 51.0
 ia-batch19/henders007-647_20080709.mp4, -1, -1, 66.7647058823529
-ia-batch19/From_a_purple_vortex....mp4, -1, -1, 64.6176470588235
+ia-batch19/From_a_purple_vortex.mp4, -1, -1, 64.6176470588235
 ia-batch19/gocatme-The_Originals_-_Victoria_Mansion_during_Christmastime.mp4, -1, -1, 48.4571428571429
 ia-batch19/catvma-Need_To_Know_-_Arts_Culture_Sawyer_Free_Library_Immigration_Series.mp4, -1, -1, 73.7647058823529
 ia-batch19/GRITtv_-_Naomi_Klein_-_The_Search_for_BP_s_Oil.mp4, -1, -1, 59.8529411764706
